@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleDI
 {
-    internal sealed class RenewContainer<TService> : IInstance<TService> where TService : class
+    internal sealed class TransientContainer<TService> : IInstance<TService> where TService : class
     {
-        public RenewContainer(Type serviceType, Type interfaceType = null)
+        public TransientContainer(Type serviceType, Type interfaceType = null)
         {
             ServiceType = serviceType;
             InterfaceType = interfaceType;

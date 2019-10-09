@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleDI
 {
@@ -110,7 +107,7 @@ namespace SimpleDI
                     Instances.Add(new SingletonContainer<TService>(serviceType));
                     break;
                 case InstanceType.Renew:
-                    Instances.Add(new RenewContainer<TService>(serviceType));
+                    Instances.Add(new TransientContainer<TService>(serviceType));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(instanceType), instanceType, null);
@@ -134,7 +131,7 @@ namespace SimpleDI
                     Instances.Add(new SingletonContainer<TService>(serviceType, interfaceType));
                     break;
                 case InstanceType.Renew:
-                    Instances.Add(new RenewContainer<TService>(serviceType, interfaceType));
+                    Instances.Add(new TransientContainer<TService>(serviceType, interfaceType));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(instanceType), instanceType, null);

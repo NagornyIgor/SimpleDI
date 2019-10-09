@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IInstance.cs" />
-    <Compile Include="RenewContainer.cs" />
+    <Compile Include="Transient.cs" />
     <Compile Include="InstanceType.cs" />
     <Compile Include="SingletonContainer.cs" />
     <Compile Include="InstanceGenerator.cs" />
